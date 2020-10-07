@@ -1,0 +1,7 @@
+/* Capturando o SQL de um processo */
+SELECT   s.SID, q.users_executing, q.sql_text
+    FROM v$session s, v$sql q
+   WHERE s.SID = 670
+    AND q.address = s.sql_address
+ORDER BY s.SID;
+
